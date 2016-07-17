@@ -54,7 +54,7 @@ $(document).ready(function()
             {
                 $('.test6').mouseup(function()
                     {
-                        var div = $('#test6').toggle(2000)
+                        var div = $('#test6').toggle(1000)
                             {
                                 $('#test5').hide('slow');
                                 $('#test4').hide('slow');
