@@ -1,0 +1,288 @@
+<!DOCTYPE>
+<script>
+<?php
+if(isset($_POST["submit"])){
+// Checking For Blank Fields..
+if($_POST["name"]==""||$_POST["email"]==""||$_POST["message"]==""){
+echo "Fill All Fields..";
+}else{
+// Check if the "Sender's Email" input field is filled out
+$email=$_POST['email'];
+// Sanitize E-mail Address
+$email =filter_var($email, FILTER_SANITIZE_EMAIL);
+// Validate E-mail Address
+$email= filter_var($email, FILTER_VALIDATE_EMAIL);
+if (!$email){
+echo "Invalid Sender's Email";
+}
+else{
+//$subject = $_POST['sub'];
+$message = $_POST['message'];
+$headers = 'From:'. $email2 . "\r\n"; // Sender's Email
+$headers .= 'Cc:'. $email2 . "\r\n"; // Carbon copy to Sender
+// Message lines should not exceed 70 characters (PHP rule), so wrap it
+$message = wordwrap($message, 70);
+// Send Mail By PHP Mail Function
+mail("vidyasawant1989@gmail.com", $message, $headers);
+echo "Your mail has been sent successfuly ! Thank you for your feedback";
+}
+}
+}
+?>
+</script>
+<html>
+<head>
+<title> Vidya Sawant</title>
+  <link rel="stylesheet" type="text/css" href="css/myprofile.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/myprofile.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/path/to/parallax.js"></script>  
+</head>
+<body>
+  <!-- heading -->
+    
+<header style="width:1350px;">
+    <div>
+        <div class = "col-sm-2" style = "font-family : Broadway; font-size : 80px; color : #011A27;padding-top:0px;" align = "center"  >VS
+        </div>
+        <div class="jumbotron" style = "background: linear-gradient(grey,white);box-shadow:2px 2px 2px 2px #011A27;margin-bottom:0px;">
+        
+        <div class = "col-sm-7"></div>	
+            
+        <div class = "col-sm-3, socialbtns" style = "font-size : 27px;">
+            <a href="https://www.facebook.com/vidya.sawant.336" target="_blank"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://www.linkedin.com/in/vidya-sawant-9079774a?trk=nav_responsive_tab_profile" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+            <a href="https://github.com/VidyaSawant" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="mailto:vidyasawant1989@gmail.com">
+            <i class="email-lnk" style = "color :#69FAC2;">hire me</i>
+            </a>
+        </div>
+        </div>
+    </div>
+</header>
+ 
+      <div class="homepage-hero-module" id="frame1">
+        <div class="video-container">
+        
+            <div class="filter"></div>
+                <video autoplay loop class="fillWidth">
+            <source src="videos/Aloha-Mundo.mp4" type="video/mp4" />
+            <source src="videos/Aloha-Mundo.webm" type="video/webm" />
+                </video>
+            <div class="overlay" style="padding-top:200px;padding-right:0px; "> 
+                <h1 style="padding-right:200px;padding-left:230px;font-size:25px;font-family:'Candara'">"Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program."
+- Linus Torvalds</h1>
+           <input name="Submit" type="submit" value="About me" class="text_button" onclick="myFunction()" style="color:cream;"> 
+                <h1 style="padding-top:170px; padding-left:850px; font-size:18px;"> &copy; 2016 Vidya Sawant</h1>
+                </div>
+         <div class="poster hidden">    
+            <img src="images/Aloha-Mundo.jpg" alt="">
+         </div>
+       </div>
+    </div>
+
+<!-- Main menu-->
+<div class="parent2">
+  <div class="test6"><i class="fa fa-user fa-2x"></i></div>
+  <div class="test5"><i class="fa fa-graduation-cap fa-2x"></i></div>
+  <div class="test4"><i class="fa fa-tachometer fa-2x" aria-hidden="true"></i></div>
+  <div class="test3"><i class="fa fa-suitcase fa-2x"></i></div>
+  <div class="test2"><i class="fa fa-code fa-2x"></i></div>
+  <div class="test1" ><i class="fa fa-envelope-o fa-2x"></i></div>
+  <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
+</div>
+  
+
+<!--loading-->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_one" ></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_four"></div>
+        </div>
+    </div>
+ </div>
+ 
+    <!--homepage-->
+  
+    
+     <!-- Menu 6 -->
+<div class= "transbox" id=test6 style="height:450px;width:900px;position:absolute;text-align : center; box-shadow:10px 10px 5px grey;padding-top: 40px;margin-top:18px;">
+    <img src='images/mypic.jpg' 
+    style = "height : 200px ; width : 200px; border-radius:170px; image-radius:150px;
+             box-shadow: inset x y blur spread color;
+             box-shadow: 5px 5px 5px 7px #000;          
+             rgba(0,0,0,.20);
+             opacity:0.9;
+             border: 15px solid #69FAC2 ;
+	-webkit-box-shadow: 0 12px 8px rgba(0,0,0, .20);
+	-moz-box-shadow: 0 12px 8px rgba(0,0,0, .20);"/>    
+    <p style="color:white;text-align : center;padding-top:20px; font-family :'Freestyle Script';text-shadow:5px 5px 5px grey; font-size: 35px;"> Hi! I'm Vidya Sawant an aspirent Web Developer living in Jersey City,New Jersey. I love to design Websites and I have expirience in designing  Indian State government Websites. 
+    </p>
+</div>
+    
+     <!-- Menu 5 -->
+<div class= "transbox" id=test5 style="height:550px;width:1100px; position:absolute ;text-align : center;box-shadow:10px 10px 5px grey;margin-top:18px;">
+    <div class="wrap">
+        <div style="padding-left: 160px;">
+          <div class="box">
+            <div class="content" style="padding-top:35px;font-family :'Freestyle Script'">Year 2010</div>
+          </div>
+          <div class="box">
+            <div class="content" style="padding-top:35px;font-family :'Freestyle Script'">Bsc.IT</div>   
+          </div>
+          <div class="box">
+            <div class="content" style="font-size:10px;"><img src = "images/UniMum.jpg" style = "height:80px ; width : 80px;"/>
+            Mumbai, India</div>
+          </div>
+        </div><br><br>
+        <div style="padding-left: 320px;">
+         <div class="box">
+            <div class="content" style="padding-top:35px;font-family :'Freestyle Script'">Year 2013</div>   
+          </div>
+          <div class="box">
+            <div class="content" style="padding-top:30px;font-family :'Freestyle Script'">MBA.IT</div>  
+          </div>
+          <div class="box">
+            <div class="content" style="font-size:10px;"><img src = "images/UniPune.jpg" style = "height:80px ; width : 80px;"/>
+            Pune, India</div><br>
+          </div><br><br>
+        </div>
+        <div style="padding-left: 480px;font-family :'Freestyle Script'">
+          <div class="box">
+            <div class="content" style="padding-top:35px;font-family :'Freestyle Script'">Year 2016</div>   
+          </div>
+          <div class="box">
+            <div class="content" style="padding-top:35px;font-family :'Freestyle Script'">MS.IS</div>  
+          </div>
+          <div class="box">
+            <div class="content" style="font-size:10px;">
+                <img src = "images/UniPace.jpg" style = "height:80px ; width : 80px;"/>
+              New York, US
+          </div>
+          </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- Menu 4 -->  
+<div class= "transbox" id=test4 style="height:450px;width:900px;position:absolute;text-align : center;box-shadow:10px 10px 5px grey;margin-top:10px;">
+  <section class="container">
+  
+        <!-- HTML Chart -->
+  <figure class="chart" data-percent="75" style="padding-right:20px;">
+    <figcaption>HTML</figcaption>
+        <img class="html" src="https://dl.dropboxusercontent.com/s/68gv23q4y5qyq52/html5.svg">
+        <svg width="200" height="200">
+            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+        </svg>
+      <h1 style="font-size:30px;font-family :'Freestyle Script'">HTML/HTML5</h1>
+  </figure>
+      
+  
+  <!-- CSS Chart -->
+  <figure class="chart" data-percent="75" style="padding-right:20px;">
+    <figcaption>CSS</figcaption>
+        <img class="css" src="https://dl.dropboxusercontent.com/s/gftbpqje9h2jvlv/css3.svg">
+        <svg width="200" height="200">
+            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+        </svg>
+      <h1 style="font-size:30px;font-family :'Freestyle Script'">css/css3</h1>
+  </figure>
+  
+  <!-- Javascript Chart -->
+  <figure class="chart" data-percent="50" style="padding-right:20px;">
+    <figcaption>Javascript</figcaption>
+        <img class="javascript" src="https://dl.dropboxusercontent.com/s/jsp3rsberc4q650/javascript.svg">
+        <svg width="200" height="200">
+            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+        </svg>
+      <h1 style="font-size:30px;font-family :'Freestyle Script'">JavaScript</h1>
+  </figure>
+  
+  <!-- bootstrap Chart -->
+  <figure class="chart" data-percent="25" style="padding-right:260px;">
+    <figcaption>Node</figcaption>
+        <img class="node" src="images/bootstrap.png">
+        <svg width="200" height="200">
+            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+        </svg>
+      <h1 style="font-size:30px;font-family :'Freestyle Script'">Bootstrap</h1>
+  </figure>
+      
+  </section>
+  </div>  
+    
+        <!-- Menu 3-->
+<div class= "transbox" id=test3 style="height:410px;width:900px;position:absolute;text-align : center;box-shadow:10px 10px 5px grey;margin-top:18px;">
+    
+             <a href="documents/My-CV.pdf" style="color:white;">Click here to download !</a>
+</div>
+    
+ <!-- Menu 2 -->
+<div class= "transbox" id=test2 style="height:400px;width:900px;position:absolute; text-align : center; box-shadow:10px 10px 5px grey;margin-top:18px; padding:50px;">
+    <h1 style="font-size:20px; color:white;">Small Projects</h1>
+   <div class = "col-sm-6" >
+       <div id="all">
+            <div class="view view-first">
+                <img src="images/slideshowproj.png" />
+                    <div class="mask">
+                        <h2>Automatic Slide Show</h2>
+                        <p>It's an automatic slideshow with navigation arrows to navigate images. </p>
+                        <a href="projects/slideshow.html" class="info" style="font-size: 10px;">View</a>
+                    </div>
+            </div>
+       </div>
+    </div>
+    <div class = "col-sm-6" >
+        <div id="all">
+            <div class="view view-first">
+                <img src="images/todolistproj.png" />
+                    <div class="mask">
+                        <h2>To Do list</h2>
+                        <p>It's a To Do list application to keep you organized.</p>
+                        <a href="projects/todolist.html" class="info" style="font-size: 10px;">View</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  
+   
+  <!-- Menu 1 --> 
+<div class= "transbox" id=test1 style="height:800px;width:900px;position:absolute;text-align : center;box-shadow:10px 10px 5px grey;margin-top:0px; margin-top:20px;">
+    <div id="wrap">
+		<h1 style="font-size : 25px";>Send a message</h1>
+		<div id='form_wrap'>
+			<form action="#" id="form" method="post" name="form">
+				
+                <p>Hello Vidya,</p>
+				    <label for="email">Your Message : </label>
+				    <textarea  name="message" value="Your Message" id="message" ></textarea>
+                <p>Best,</p>	
+				    <label for="name">Name: </label>
+				    <input type="text" name="name" value="" id="name" />
+                
+				    <label for="email">Email: </label>
+				    <input type="text" name="email" value="" id="email" />
+                
+				    <input type="submit" name ="submit" value="Now, I send, thanks!" />
+			</form>
+            <h3><?php include "secure_email_code.php"?></h3>
+		</div>
+	</div>
+</div> 
+
+
+    
+</body>
+</html>
