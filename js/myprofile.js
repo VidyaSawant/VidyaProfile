@@ -70,6 +70,30 @@ $(document).ready(function()
             }
       });
       
+ $(document).ready(function()
+     {
+        $('#test6').hide();
+     
+            {
+                $('.text_button').mouseup(function()
+                    {
+                        var div = $('#test6').toggle(1000)
+                            {
+                                $('#test5').hide('slow');
+                                $('#test4').hide('slow');
+                                $('#test3').hide('slow');
+                                $('#test2').hide('slow');
+                                $('#test1').hide('slow');
+                                div.animate({ right: "190px" }, 'slow');
+                                div.animate({fontSize: '50em'}, 3000); 
+                            }
+                    });
+         
+         
+            }
+      });
+      
+      
   $(document).ready(function()
      {
         $('#test5').hide();
